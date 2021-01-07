@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<center>
+    <fieldset>
+<h1 text-align="center" style="color:MediumSeaGreen;">
+    send an email
+</h1>
+    </fieldset>
+    </center>
+    <fieldset >
+<form action="{% url 'email' %}" method="post">
+    {% csrf_token %}
+    <center>
+    <table>
+        <tr>
+           <td>
+               <label>Student Name :</label>
+               <input type="text" name="studentname" required><br><br>
+           </td>
+       </tr>
+        <tr>
+           <td>
+               <label>To Email :</label>
+               <input type="email" name="toemail" required><br><br>
+           </td>
+       </tr>
+        <tr>
+           <td>
+               <label> Select Date  :</label>
+               <input type="date" name="date" required><br><br>
+           </td>
+       </tr>
+        <tr>
+           <td>
+               <label>Select Time :</label>
+               <input type="time" name="time" required><br><br>
+           </td>
+       </tr>
+        <tr>
+           <td>
+               <label>Zoom link :</label>
+               <input type="text" name="link" required><br><br>
+           </td>
+            <tr>
+           <td>
+               <input type="submit" value="send" ><br><br>
+               <input type="reset" value="cancel" ><br><br>
+           </td>
+       </tr>
+
+    </table>
+    </center>
+</form>
+    </fieldset>
+</body>
+</html>

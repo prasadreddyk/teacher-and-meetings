@@ -1,0 +1,38 @@
+<!
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<form action="{% url 'oneteacher' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token%}
+<center>
+<h2 style="color:MediumSeaGreen;">Teachers list</h2>
+    <input type="text" placeholder="Search.." name="srch">
+    <input type="submit" value="search">
+    </center>
+     </form>
+
+<form>
+{% for da in data %}
+{% csrf_token%}
+<menu>
+<fieldset style="background-color:LightGray;">
+    <center>
+        <label>{{da.id}}.</label>
+   <label>Teachera Name :</label>   {{da.teacher_name}}<br><br>
+   <label>     Email    :</label>   {{da.email}}</a><br><br>
+   <label>qualification :</label>  {{da.qualification}}<br><br>
+   <label> subject      :</label>   {{da.subject}}<br><br>
+    <a href="{% url 'email' %}">fix appointment</a>
+    </center>
+</fieldset>
+</menu>
+{% endfor%}
+    </form>
+</body>
+</html>

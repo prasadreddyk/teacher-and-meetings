@@ -1,0 +1,15 @@
+<html>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        <fieldset style="background-color:LightGray;">
+    <center>
+        {% for da in sr %}
+        <label>{{da.id}}.</label>
+   <label>Teachera Name :</label>   {{da.teacher_name}}<br><br>
+   <label>     Email    :</label> <a href ="mailto:{{da.email}}"> {{da.email}}</a><br><br>
+        <a href="{% url 'email' %}">fix appointment</a>
+    {% endfor%}
+    </center>
+        </fieldset>
+    </form>
+</html>
